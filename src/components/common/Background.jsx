@@ -2,7 +2,7 @@ const Background = () => {
   return (
     <div className="min-h-screen w-full bg-white opacity-30 fixed size-full">
       <div
-        className="fixed size-full inset-0 z-0"
+        className="fixed size-full inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: `
         linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px),
