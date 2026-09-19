@@ -3,9 +3,29 @@ import TitleElement from "../../components/layout/main/dashboard/home/TitleEleme
 import summery from "../../data/summery";
 import SummeryCard from "../../components/layout/main/dashboard/home/SummeryCard";
 import Chart from "../../components/layout/main/dashboard/home/Chart";
+import Table from "../../components/ui/Table/Table";
+import FilterIcon from "../../components/ui/FilterIcon";
+import SearchBox from "../../components/ui/SearchBox";
+import { Link } from "react-router";
+import { MdOpenInNew } from "react-icons/md";
 function page() {
   const Button = () => {
     return <button className="primary-bg px-4 py-2">ایجاد محصول</button>;
+  };
+
+  const tableData = {
+    headerTitle: {
+      title: "لیست محصولات",
+      Button: () => (
+        <Link
+          to={"/products"}
+          className="underline hover:text-blue-400 text-blue-500 flex-center gap-1"
+        >
+          <span>صفحه محصولات</span>
+          <MdOpenInNew />
+        </Link>
+      ),
+    },
   };
 
   return (
@@ -22,6 +42,7 @@ function page() {
         ))}
       </div>
       <Chart />
+      <Table data={tableData} />
     </div>
   );
 }
