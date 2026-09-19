@@ -10,8 +10,6 @@ import {
 import summery from "../../../../../data/summery";
 
 const CustomTooltip = ({ payload }) => {
-  console.log(payload);
-
   return (
     <div className="custom-tooltip bg-white p-2 rounded shadow-md">
       <p className="label">
