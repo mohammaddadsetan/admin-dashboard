@@ -21,19 +21,19 @@ const CustomTooltip = ({ payload }) => {
 
 function Chart() {
   return (
-    <div className="w-full h-100">
-      <ResponsiveContainer>
-        <BarChart width="100%" height="100%" data={summery}>
-          <XAxis dataKey="title" />
-          <YAxis />
-          <Bar dataKey="value" fill="#019d79" />
-          <Tooltip
-            content={({ payload }) => {
-              return <CustomTooltip payload={payload} />;
-            }}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+    <div className="p-5 space-y-10 bg-white border rounded-xl primary-border-color">
+      <p className="text-lg">آمار کلی داشبورد</p>
+
+      <div className="w-full h-100">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={summery} width={150} height={40}>
+            <Bar dataKey="value" fill="#019d79" />
+            <XAxis dataKey="title" />
+            <YAxis />
+            <Tooltip content={CustomTooltip} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
