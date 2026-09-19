@@ -1,7 +1,7 @@
 import React from "react";
 
-function TableData() {
-  return <div>TableData</div>;
+function TableData({ children }) {
+  return <div>sdsdsd</div>;
 }
 
 export default TableData;
