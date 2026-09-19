@@ -6,7 +6,7 @@ export default [
   {
     id: 1,
     title: "تعداد محصولات",
-    value: 300,
+    value: 150,
     Icon: BiShoppingBag,
   },
   {
