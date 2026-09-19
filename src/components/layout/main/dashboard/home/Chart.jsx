@@ -1,6 +1,25 @@
 import React from "react";
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import summery from "../../../../../data/summery";
+
+const CustomTooltip = ({ payload }) => {
+  console.log(payload);
+
+  return (
+    <div className="custom-tooltip bg-white p-2 rounded shadow-md">
+      <p className="label">
+        {payload[0]?.payload?.title}: {payload[0]?.payload?.value}
+      </p>
+    </div>
+  );
+};
 
 function Chart() {
   return (
@@ -10,6 +29,11 @@ function Chart() {
           <XAxis dataKey="title" />
           <YAxis />
           <Bar dataKey="value" fill="#019d79" />
+          <Tooltip
+            content={({ payload }) => {
+              return <CustomTooltip payload={payload} />;
+            }}
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
