@@ -1,7 +1,7 @@
 import React from "react";
 
-function TableRow() {
-  return <div>TableRow</div>;
+function TableRow({ children, className }) {
+  return <tr className={className}>{children}</tr>;
 }
 
 export default TableRow;

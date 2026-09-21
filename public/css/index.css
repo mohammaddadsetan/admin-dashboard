@@ -49,7 +49,7 @@ body {
 }
 
 .badge {
-  @apply text-xs flex-center gap-1 px-1 py-0.5 rounded-md border max-w-max cursor-pointer select-none hover:opacity-80 max-h-max;
+  @apply text-xs w-full flex-center gap-1 px-1 py-0.5 rounded-md border max-w-17.5 cursor-pointer select-none hover:opacity-80 max-h-max;
 
   &.success-badge {
     @apply text-green-500 bg-green-500/10;
@@ -60,11 +60,9 @@ body {
   }
 }
 
-
 .link-text {
-  @apply text-blue-500 cursor-pointer text-sm underline underline-offset-1
+  @apply text-blue-500 cursor-pointer text-sm underline underline-offset-1;
 }
-
 
 ::-webkit-scrollbar {
   @apply rounded-full overflow-hidden!;
@@ -78,10 +76,10 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  @apply bg-teal-500/40
+  @apply bg-teal-500/40;
 }
 
- ::-webkit-scrollbar-thumb:horizontal{
-        background: red;
-        border-radius: 1px;
- }
+::-webkit-scrollbar-thumb:horizontal {
+  background: red;
+  border-radius: 1px;
+}
