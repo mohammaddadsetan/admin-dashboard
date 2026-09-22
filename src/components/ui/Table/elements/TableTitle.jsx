@@ -1,10 +1,11 @@
 import React from "react";
 
-function TableTitle({ headerTitle }) {
-  const { Button } = headerTitle;
+function TableTitle({ header }) {
+  const { Button } = header;
+
   return (
     <div className="flex items-center justify-between">
-      <strong className="font-bold text-3xl">{headerTitle.title}</strong>
+      <strong className="font-bold text-3xl">{header.title}</strong>
       <div>{Button ? <Button /> : ""}</div>
     </div>
   );
