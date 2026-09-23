@@ -8,7 +8,7 @@ function CRUDButton({ Icon, className, title }) {
     </button>
   );
 
-  return <Modal Trigger={Trigger} title />;
+  return <Modal Trigger={Trigger} title={title} />;
 }
 
 export default CRUDButton;

@@ -63,7 +63,7 @@ function ProductsTable() {
                 <CRUDButton
                   Icon={HiOutlineTrash}
                   className="cursor-pointer text-xl text-red-500"
-                  title="حذف مجصول"
+                  title="حذف محصول"
                 />
                 <CRUDButton
                   Icon={HiEye}
