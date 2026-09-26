@@ -1,17 +1,19 @@
-import React from "react";
-import Table from "../../../../ui/Table/Table";
-import TableHeader from "../../../../ui/Table/elements/TableHeader";
-import TableHeaderData from "../../../../ui/Table/elements/TableHeaderData";
-import TableBody from "../../../../ui/Table/elements/TableBody";
-import TableRow from "../../../../ui/Table/elements/TableRow";
-import TableData from "../../../../ui/Table/elements/TableData";
-import { products, tableHeaderData } from "../../../../../data/products";
+import React, { useState } from "react";
+import Table from "../../../ui/Table/Table";
+import TableHeader from "../../../ui/Table/elements/TableHeader";
+import TableHeaderData from "../../../ui/Table/elements/TableHeaderData";
+import TableBody from "../../../ui/Table/elements/TableBody";
+import TableRow from "../../../ui/Table/elements/TableRow";
+import TableData from "../../../ui/Table/elements/TableData";
+import { products, tableHeaderData } from "../../../../data/products";
 import clsx from "clsx";
-import CRUDButton from "../../../../ui/CRUD button/CRUDButton";
 import { HiEye, HiOutlineTrash } from "react-icons/hi";
 import { BiEdit } from "react-icons/bi";
 import { Link } from "react-router";
 import { MdOpenInNew } from "react-icons/md";
+import DeleteBtn from "./DeleteBtn";
+import EditButton from "./EditButton";
+import ViewButton from "./ViewButton";
 
 function ProductsTable() {
   const tableData = {
@@ -29,6 +31,13 @@ function ProductsTable() {
     },
   };
 
+  const [lastProducts, setLastProducts] = useState([...products]);
+  const deleteProduct = (id) => {
+    const filteredProducts = lastProducts.filter(
+      (product) => product.id !== id,
+    );
+    setLastProducts(filteredProducts);
+  };
   return (
     <div>
       <Table headerData={tableData.header}>
@@ -38,7 +47,7 @@ function ProductsTable() {
           ))}
         </TableHeader>
         <TableBody>
-          {products.map((product) => (
+          {lastProducts.map((product) => (
             <TableRow
               key={product.id}
               className=" flex *:flex w-full justify-between  items-center *:items-center flex-1 shrink! *:flex-1 *:shrink even:bg-zinc-100 text-sm *:h-14  *:px-3"
@@ -60,21 +69,13 @@ function ProductsTable() {
                 {product.price.toLocaleString("fa-IR") + " " + "تومان"}
               </TableData>
               <TableData className="flex items-center gap-2">
-                <CRUDButton
-                  Icon={HiOutlineTrash}
-                  className="cursor-pointer text-xl text-red-500"
+                <DeleteBtn
                   title="حذف محصول"
+                  product={product}
+                  onSubmit={() => deleteProduct(product.id)}
                 />
-                <CRUDButton
-                  Icon={HiEye}
-                  className="cursor-pointer text-xl text-sky-500"
-                  title="مشاهده جزئیات مجصول"
-                />
-                <CRUDButton
-                  Icon={BiEdit}
-                  className="cursor-pointer text-xl text-green-500"
-                  title="ویرایش مشخصات محصول"
-                />
+                <ViewButton title="مشاهده جزئیات مجصول" product={product} />
+                <EditButton title="ویرایش مشخصات محصول" product={product} />
               </TableData>
             </TableRow>
           ))}
