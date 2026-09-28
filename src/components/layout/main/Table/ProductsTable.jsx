@@ -38,6 +38,17 @@ function ProductsTable() {
     );
     setLastProducts(filteredProducts);
   };
+
+  const changeView = (id) => {
+    setLastProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === id
+          ? { ...product, isPublished: !product.isPublished }
+          : product,
+      ),
+    );
+  };
+
   return (
     <div>
       <Table headerData={tableData.header}>
@@ -74,7 +85,11 @@ function ProductsTable() {
                   product={product}
                   onSubmit={() => deleteProduct(product.id)}
                 />
-                <ViewButton title="مشاهده جزئیات مجصول" product={product} />
+                <ViewButton
+                  title="تغییر وضعیت انتشار"
+                  product={product}
+                  onSubmit={() => changeView(product.id)}
+                />
                 <EditButton title="ویرایش مشخصات محصول" product={product} />
               </TableData>
             </TableRow>

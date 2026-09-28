@@ -1,7 +1,8 @@
 import React from "react";
 import Modal from "./../../modal/Modal";
 import { HiEye } from "react-icons/hi";
-function ViewButton({ title, product }) {
+import clsx from "clsx";
+function ViewButton({ title, product, onSubmit }) {
   const Trigger = () => (
     <button className="cursor-pointer text-xl text-sky-500">
       <HiEye className="text-xl" />
@@ -9,13 +10,19 @@ function ViewButton({ title, product }) {
   );
 
   return (
-    <Modal Trigger={Trigger} title={title}>
+    <Modal Trigger={Trigger} title={title} onSubmit={onSubmit}>
       <div className="flex-center gap-2">
-        آیا از حذف محصول{" "}
-        <kbd className="px-2 py-1 rounded-md bg-red-500/15 font-black! text-red-500">
-          {product.title}
-        </kbd>{" "}
-        اطمینان دارید؟
+        <p>
+          آیا از{" "}
+          <span
+            className={clsx(
+              product.isPublished ? "text-blue-500" : "text-green-500",
+            )}
+          >
+            <strong>{product.isPublished ? "خصوصی" : "عمومی"}</strong>
+          </span>{" "}
+          کردن این محصول اطمینان دارید؟
+        </p>
       </div>
     </Modal>
   );
