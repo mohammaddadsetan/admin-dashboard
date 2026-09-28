@@ -14,7 +14,7 @@ import { MdOpenInNew } from "react-icons/md";
 import DeleteBtn from "./DeleteBtn";
 import EditButton from "./EditButton";
 import ViewButton from "./ViewButton";
-
+import Pagination from "./Pagination";
 function ProductsTable() {
   const tableData = {
     header: {
@@ -50,7 +50,7 @@ function ProductsTable() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center w-full">
       <Table headerData={tableData.header}>
         <TableHeader>
           {tableHeaderData.map((data, index) => (
@@ -95,6 +95,11 @@ function ProductsTable() {
             </TableRow>
           ))}
         </TableBody>
+        <Pagination
+          products={products}
+          itemsPerPage={6}
+          setItems={setLastProducts}
+        />
       </Table>
     </div>
   );
