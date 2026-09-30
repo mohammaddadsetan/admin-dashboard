@@ -8,7 +8,7 @@ import Pagination from "../../components/layout/main/dashboard/home/Table/Pagina
 
 function page() {
   const [layoutType, setLayoutType] = useState("table");
-  const [allProducts, setAllProducts] = useState([...products]);
+  const [paginatedProducts, setPaginatedProducts] = useState([...products]);
 
   const Button = () => {
     return (
@@ -35,12 +35,16 @@ function page() {
       <section>
         {layoutType === "table" ? (
           <ProductsTableView
-            products={allProducts}
+            products={paginatedProducts}
             allProducts={products}
-            setProducts={setAllProducts}
+            setProducts={setPaginatedProducts}
           />
         ) : (
-          <ProductsGridView />
+          <ProductsGridView
+            paginatedProducts={paginatedProducts}
+            allProducts={products}
+            setPaginatedProducts={setPaginatedProducts}
+          />
         )}
       </section>
     </div>
