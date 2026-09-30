@@ -16,7 +16,9 @@ function OverViewContainer({
       <div className="space-y-3 "> {children}</div>
 
       <div className="flex items-center justify-between  border-t primary-border-color pt-5">
-        <p className="text-neutral-500 text-sm">{itemLength}مورد یافت شد</p>
+        <p className="text-neutral-500 text-sm">
+          {itemLength + " "}مورد یافت شد{" "}
+        </p>
         <Link
           className="primary-bg text-white text-sm px-3 py-1.5 rounded-md"
           to={navigate || "/"}

@@ -4,7 +4,7 @@ import { products } from "../../../../../../../data/products";
 import ProductCard from "./ProductCard";
 function LastProducts() {
   return (
-    <div className="col-span-3">
+    <div className="col-span-3  max-h-max">
       <OverViewContainer
         title="آخرین محصولات"
         buttonLabel="نمایش کامل لیست"

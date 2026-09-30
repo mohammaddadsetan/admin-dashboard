@@ -11,7 +11,7 @@ function DashboardLayout() {
         <div className="w-full grow ">
           <Header />
           <div id="content" className="mt-6 container mx-auto">
-            <main className="relative z-10 px-5">
+            <main className="relative z-10 px-5 mb-20">
               <Outlet />
             </main>
             <Background />
