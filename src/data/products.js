@@ -3,7 +3,16 @@ export const tableHeaderData = [
   "عنوان محصول",
   "وضعیت نمایش",
   "قیمت",
-  "",
+  "عملیات",
+];
+export const tableAllTableHeaderData = [
+  "شناسه",
+  "عنوان محصول",
+  "عکس",
+  "وضعیت نمایش",
+  "قیمت",
+  "موجودی",
+  "عملیات",
 ];
 
 const STATIC_DESCRIPTION =
