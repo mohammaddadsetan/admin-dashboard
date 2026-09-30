@@ -21,7 +21,7 @@ const CustomTooltip = ({ payload }) => {
 
 function Chart() {
   return (
-    <div className="p-5 space-y-10 bg-white border rounded-xl primary-border-color">
+    <section className="p-5 space-y-10 bg-white border rounded-xl primary-border-color">
       <p className="text-lg">آمار کلی داشبورد</p>
 
       <div className="w-full h-100">
@@ -34,7 +34,7 @@ function Chart() {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -50,7 +50,7 @@ function ProductsTable() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full border primary-border-color rounded-xl ">
+    <section className="flex flex-col items-center justify-center w-full border primary-border-color rounded-xl ">
       <Table headerData={tableData.header}>
         <TableHeader>
           {tableHeaderData.map((data, index) => (
@@ -101,7 +101,7 @@ function ProductsTable() {
         itemsPerPage={6}
         setItems={setLastProducts}
       />
-    </div>
+    </section>
   );
 }
 

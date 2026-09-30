@@ -18,7 +18,7 @@ function page() {
   return (
     <div className="flex flex-col gap-5">
       <TitleElement title={"داشبورد"} buttons={<Button />} />
-      <div className="flex items-center gap-3 w-full ">
+      <section className="flex items-center gap-3 w-full ">
         {summery.map((data) => (
           <SummeryCard
             key={data.id}
@@ -27,7 +27,7 @@ function page() {
             value={data.value}
           />
         ))}
-      </div>
+      </section>
       <Chart />
       <ProductsTable />
       <QuickOverView />
