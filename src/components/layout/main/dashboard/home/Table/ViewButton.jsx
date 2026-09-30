@@ -1,7 +1,7 @@
 import React from "react";
-import Modal from "./../../modal/Modal";
 import { HiEye } from "react-icons/hi";
 import clsx from "clsx";
+import Modal from "../../../../modal/Modal";
 function ViewButton({ title, product, onSubmit }) {
   const Trigger = () => (
     <button className="cursor-pointer text-xl text-sky-500">

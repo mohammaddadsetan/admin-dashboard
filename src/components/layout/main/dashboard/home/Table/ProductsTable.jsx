@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Table from "../../../ui/Table/Table";
-import TableHeader from "../../../ui/Table/elements/TableHeader";
-import TableHeaderData from "../../../ui/Table/elements/TableHeaderData";
-import TableBody from "../../../ui/Table/elements/TableBody";
-import TableRow from "../../../ui/Table/elements/TableRow";
-import TableData from "../../../ui/Table/elements/TableData";
-import { products, tableHeaderData } from "../../../../data/products";
+import Table from "../../../../../ui/Table/Table";
+import TableHeader from "../../../../../ui/Table/elements/TableHeader";
+import TableHeaderData from "../../../../../ui/Table/elements/TableHeaderData";
+import TableBody from "../../../../../ui/Table/elements/TableBody";
+import TableRow from "../../../../../ui/Table/elements/TableRow";
+import TableData from "../../../../../ui/Table/elements/TableData";
+import { products, tableHeaderData } from "../../../../../../data/products";
 import clsx from "clsx";
 import { HiEye, HiOutlineTrash } from "react-icons/hi";
 import { BiEdit } from "react-icons/bi";
@@ -50,7 +50,7 @@ function ProductsTable() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex flex-col items-center justify-center w-full border primary-border-color rounded-xl ">
       <Table headerData={tableData.header}>
         <TableHeader>
           {tableHeaderData.map((data, index) => (
@@ -95,12 +95,12 @@ function ProductsTable() {
             </TableRow>
           ))}
         </TableBody>
-        <Pagination
-          products={products}
-          itemsPerPage={6}
-          setItems={setLastProducts}
-        />
       </Table>
+      <Pagination
+        products={products}
+        itemsPerPage={6}
+        setItems={setLastProducts}
+      />
     </div>
   );
 }

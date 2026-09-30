@@ -1,14 +1,10 @@
 import React from "react";
+import TitleElement from "../../../layout/main/dashboard/home/TitleElement";
 
 function TableTitle({ header }) {
   const { Button } = header;
 
-  return (
-    <div className="flex items-center justify-between">
-      <strong className="font-bold text-3xl">{header.title}</strong>
-      <div>{Button ? <Button /> : ""}</div>
-    </div>
-  );
+  return <TitleElement buttons={<Button />} title={header.title} />;
 }
 
 export default TableTitle;

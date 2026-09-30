@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "./../../modal/Modal";
+import Modal from "../../../../modal/Modal";
 import { BiEdit } from "react-icons/bi";
 function EditButton({ title, product }) {
   const Trigger = () => (

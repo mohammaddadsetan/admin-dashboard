@@ -1,6 +1,6 @@
 import React from "react";
-import Modal from "./../../modal/Modal";
 import { HiOutlineTrash } from "react-icons/hi";
+import Modal from "../../../../modal/Modal";
 function DeleteBtn({ title, product, onSubmit }) {
   const Trigger = () => (
     <button className="cursor-pointer text-xl text-red-500">

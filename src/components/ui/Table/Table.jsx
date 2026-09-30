@@ -3,7 +3,7 @@ import TableTitle from "./elements/TableTitle";
 
 function Table({ children, headerData }) {
   return (
-    <div className="border primary-border-color rounded p-5 space-y-8 w-full">
+    <div className=" rounded p-5 space-y-8 w-full">
       <TableTitle header={headerData} />
       <table className="w-full">{children}</table>
     </div>
