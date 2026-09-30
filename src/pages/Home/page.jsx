@@ -8,7 +8,8 @@ import FilterIcon from "../../components/ui/FilterIcon";
 import SearchBox from "../../components/ui/SearchBox";
 import { Link } from "react-router";
 import { MdOpenInNew } from "react-icons/md";
-import ProductsTable from "../../components/layout/main/Table/ProductsTable";
+import ProductsTable from "../../components/layout/main/dashboard/home/Table/ProductsTable";
+import QuickOverView from "../../components/layout/main/dashboard/home/QuickOverView/QuickOverView";
 function page() {
   const Button = () => {
     return <button className="primary-bg px-4 py-2">ایجاد محصول</button>;
@@ -29,6 +30,7 @@ function page() {
       </div>
       <Chart />
       <ProductsTable />
+      <QuickOverView />
     </div>
   );
 }
