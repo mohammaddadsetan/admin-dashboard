@@ -33,7 +33,7 @@ body {
 }
 
 .pagination {
-  @apply flex justify-center border-b p-5 primary-border-color items-center gap-1 *:cursor-pointer mt-5;
+  @apply flex justify-center  p-5 primary-border-color items-center gap-1 *:cursor-pointer mt-5;
 }
 
 .pagination-prev-button {
