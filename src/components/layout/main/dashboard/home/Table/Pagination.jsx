@@ -8,8 +8,9 @@ function Pagination({ products, setItems, itemsPerPage }) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentItems = products.slice(startIndex, endIndex);
+
     setItems(currentItems);
-  }, [currentPage]);
+  }, [currentPage, products.length]);
 
   return (
     <div className="flex items-center justify-center gap-2 bg-zinc-50/40 pagination">
