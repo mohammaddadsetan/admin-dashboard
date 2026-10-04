@@ -15,18 +15,20 @@ import Pagination from "../main/dashboard/home/Table/Pagination";
 import Table from "../../ui/Table/Table";
 import { tableAllTableHeaderData } from "../../../data/products";
 import DeleteBtn from "../main/dashboard/home/Table/DeleteBtn";
+import FilterIcon from "../../ui/FilterIcon";
+import SearchBox from "../../ui/SearchBox";
 function ProductsTableView({ products, setProducts, allProducts }) {
   const tableData = {
     header: {
       title: "لیست محصولات",
       Button: () => (
-        <Link
-          to={"/products"}
-          className="underline hover:text-blue-400 text-blue-500 flex-center gap-1"
+        <div
+          className="flex items-center
+         gap-4 *:rounded-md *:px-2 *:h-8"
         >
-          <span>صفحه محصولات</span>
-          <MdOpenInNew />
-        </Link>
+          <FilterIcon />
+          <SearchBox />
+        </div>
       ),
     },
   };
