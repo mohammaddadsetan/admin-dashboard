@@ -12,7 +12,7 @@ const Profile = () => {
         />
       </div>
       <div>
-        <p className="text-sm font-bold">محمدامین سعیدی راد</p>
+        <p className="text-sm font-bold">محمد دادستانپور</p>
         <p className="text-xs text-gray-600">مدیرعامل</p>
       </div>
     </div>
