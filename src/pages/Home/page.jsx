@@ -6,13 +6,22 @@ import Chart from "../../components/layout/main/dashboard/home/Chart";
 import Table from "../../components/ui/Table/Table";
 import FilterIcon from "../../components/ui/FilterIcon";
 import SearchBox from "../../components/ui/SearchBox";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { MdOpenInNew } from "react-icons/md";
 import ProductsTable from "../../components/layout/main/dashboard/home/Table/ProductsTable";
 import QuickOverView from "../../components/layout/main/dashboard/home/QuickOverView/QuickOverView";
 function page() {
+  const navigate = useNavigate();
+
   const Button = () => {
-    return <button className="primary-bg px-4 py-2">ایجاد محصول</button>;
+    return (
+      <button
+        onClick={() => navigate("/products")}
+        className="primary-bg px-4 py-2"
+      >
+        ایجاد محصول
+      </button>
+    );
   };
 
   return (
