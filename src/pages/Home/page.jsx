@@ -3,16 +3,15 @@ import TitleElement from "../../components/layout/main/dashboard/home/TitleEleme
 import summery from "../../data/summery";
 import SummeryCard from "../../components/layout/main/dashboard/home/SummeryCard";
 import Chart from "../../components/layout/main/dashboard/home/Chart";
-import Table from "../../components/ui/Table/Table";
-import FilterIcon from "../../components/ui/FilterIcon";
-import SearchBox from "../../components/ui/SearchBox";
-import { Link, useNavigate } from "react-router";
-import { MdOpenInNew } from "react-icons/md";
+
+import { useNavigate } from "react-router";
 import ProductsTable from "../../components/layout/main/dashboard/home/Table/ProductsTable";
 import QuickOverView from "../../components/layout/main/dashboard/home/QuickOverView/QuickOverView";
+import useTitle from "../../hooks/useTitle";
 function page() {
-  const navigate = useNavigate();
+  useTitle("صفحه اصلی");
 
+  const navigate = useNavigate();
   const Button = () => {
     return (
       <button

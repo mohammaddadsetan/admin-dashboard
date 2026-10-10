@@ -8,6 +8,7 @@ import Pagination from "../../components/layout/main/dashboard/home/Table/Pagina
 import Modal from "../../components/layout/modal/Modal";
 import AddNewProductsFields from "../../components/layout/products/AddNewProductsFields";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import useTitle from "../../hooks/useTitle";
 
 const AddProductBtn = () => {
   return <button className="primary-bg px-4 py-2">ایجاد محصول</button>;
@@ -48,8 +49,9 @@ const Button = ({ layoutType, toggleLayout, newProduct, setNewProduct }) => {
 };
 
 function page() {
-  // const [layoutType, setLayoutType] = useState("table");
   const [layoutType, setToLocalStorage] = useLocalStorage("Layout", "table");
+  useTitle("صفحه محصولات");
+
   const [paginatedProducts, setPaginatedProducts] = useState([...products]);
   const [newProduct, setNewProduct] = useState({
     id: crypto.randomUUID(),
