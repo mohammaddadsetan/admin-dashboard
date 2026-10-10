@@ -2,15 +2,16 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import { BiX } from "react-icons/bi";
 import ModalFooter from "./ModalFooter";
+import useToggle from "../../../hooks/useToggle";
 
 function Modal({ Trigger, title, children, onSubmit }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, toggle] = useToggle(false);
 
   return (
     <>
       <div
         className="min-w-max min-h-max cursor-pointer"
-        onClick={() => setIsOpen(true)}
+        onClick={() => toggle()}
       >
         {<Trigger />}
       </div>
@@ -27,7 +28,7 @@ function Modal({ Trigger, title, children, onSubmit }) {
             <span className="text-[17px] text-zinc-800 font-bold">{title}</span>
             <button
               className="text-2xl! text-zinc-500 cursor-pointer"
-              onClick={() => setIsOpen(false)}
+              onClick={() => toggle()}
             >
               <BiX />
             </button>
@@ -40,7 +41,7 @@ function Modal({ Trigger, title, children, onSubmit }) {
           </div>
 
           <div className="min-h-14 flex items-center justify-end gap-2 px-4 bg-[#F6F8FA]">
-            <ModalFooter onClose={() => setIsOpen(false)} onSubmit={onSubmit} />
+            <ModalFooter onClose={() => toggle()} onSubmit={onSubmit} />
           </div>
         </div>
       </div>
